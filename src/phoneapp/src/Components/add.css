@@ -1,4 +1,4 @@
-.add {
+.add_butt {
   border: 0;
   border-radius: 50%;
   margin-right: 10px;
@@ -57,9 +57,6 @@ form {
   position: relative;
   margin: 30px auto;
 }
-.App {
-  margin-top: 1%;
-}
 .iphone-top {
   position: relative;
 }
@@ -81,7 +78,4 @@ form {
   border: 2px solid rgba(0, 0, 0, 0.9);
   border-radius: 3px;
   overflow: auto;
-}
-.addMarg {
-  margin-bottom: 30px;
 }
