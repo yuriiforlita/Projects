@@ -5,13 +5,13 @@ class Search extends Component {
     return (
       <form className="search">
         <input
-          className="inp"
+          className="search_inp"
           type="text"
           placeholder="Search..."
           onChange={this.props.search}
         />
         <button className="sort" onClick={this.props.change}>
-          {this.props.symbolChg ? "⇑" : "⇓"}{" "}
+          {this.props.symbolChg ? "⇓" : "⇑"}
         </button>
       </form>
     );

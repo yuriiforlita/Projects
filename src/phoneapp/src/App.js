@@ -10,9 +10,7 @@ class App extends Component {
     text: "",
     value: [],
     search: "",
-    active: false,
-    statusF: 1,
-    statusS: -1
+    active: true
   };
 
   handleSubmit = event => {
@@ -45,19 +43,14 @@ class App extends Component {
   };
   toggleButt = e => {
     e.preventDefault();
-    let currentState = this.state.active;
-    let changeF = this.state.statusF === 1 ? -1 : 1;
-    let changeS = this.state.statusS === -1 ? 1 : -1;
-    this.setState({
-      active: !currentState,
-      statusF: changeF,
-      statusS: changeS
-    });
+    this.setState(({ active }) => ({
+      active: !active
+    }));
   };
-  deleleCont = index => {
-    let newArr = this.state.value.filter(el => el.id !== index);
+  delNumb = index => {
+    let filterConts = this.state.value.filter(el => el.id !== index);
     this.setState({
-      value: newArr
+      value: filterConts
     });
   };
 
@@ -73,7 +66,7 @@ class App extends Component {
               change={this.toggleButt}
               symbolChg={this.state.active}
             />
-            <List values={this.state} deleteIt={this.deleleCont} />
+            <List values={this.state} deleteIt={this.delNumb} />
             <Add
               handleSubmit={this.handleSubmit}
               handleChange={this.handleChange}

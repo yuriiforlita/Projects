@@ -18,11 +18,13 @@ class List extends Component {
         </div>
         <ul className="listDis">
           {filteredContacts
-            .sort((a, b) =>
-              a.name.charCodeAt(0) > b.name.charCodeAt(0)
-                ? this.props.values.statusF
-                : this.props.values.statusS
-            )
+            .sort((a, b) => {
+              const aCharCode = a.name.charCodeAt(0);
+              const bCharCode = b.name.charCodeAt(0);
+              return this.props.values.active
+                ? aCharCode - bCharCode
+                : bCharCode - aCharCode;
+            })
             .map((el, id) => {
               return (
                 <li key={id} id={el.id}>

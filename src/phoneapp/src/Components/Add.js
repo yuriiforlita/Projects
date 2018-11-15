@@ -13,7 +13,7 @@ class Add extends Component {
           required
         />
         <button
-          className="buttonAdd"
+          className="add"
           type="submit"
           value="Submit"
           onClick={this.props.clearInp}
