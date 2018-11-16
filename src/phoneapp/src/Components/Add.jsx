@@ -1,29 +1,27 @@
 import React, { Component } from "react";
 import "./add.css";
 
-class Add extends Component {
-  render() {
-    return (
-      <form onSubmit={this.props.handleSubmit} className="addMarg">
-        <input
-          type="text"
-          className="inpAdd inp"
-          value={this.props.valueChange}
-          onChange={this.props.handleChange}
-          placeholder="Name Surname Number"
-          required
-        />
-        <button
-          className="buttonAdd"
-          type="submit"
-          value="Submit"
-          onClick={this.props.clearInp}
-        >
-          +
-        </button>
-      </form>
-    );
-  }
-}
+const Add = ({ valueChange, clearInp, handleSubmit, handleChange }) => {
+  return (
+    <form onSubmit={handleSubmit} className="addMarg">
+      <input
+        type="text"
+        className="inp"
+        value={valueChange}
+        onChange={handleChange}
+        placeholder="Name Surname Number"
+        required
+      />
+      <button
+        className="add_butt"
+        type="submit"
+        value="Submit"
+        onClick={clearInp}
+      >
+        +
+      </button>
+    </form>
+  );
+};
 
 export default Add;
