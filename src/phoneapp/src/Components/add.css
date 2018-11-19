@@ -1,0 +1,81 @@
+.add_butt {
+  border: 0;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+li {
+  list-style: none;
+  padding-top: 10px;
+}
+.dspFlex {
+  display: flex;
+  justify-content: space-between;
+  width: 23%;
+  margin: 0 auto;
+}
+p {
+  margin: 0 !important;
+}
+ul {
+  padding: 0 !important;
+}
+form {
+  margin-top: 4%;
+}
+.search {
+  margin-bottom: 20px;
+  margin-top: 11%;
+}
+.sort {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.search_inp {
+  border: 0;
+  border-bottom: 1px solid black;
+  background: transparent;
+}
+.delBut {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: red;
+}
+#main {
+  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px #999,
+    0 0 30px 0px rgba(0, 0, 0, 0.7);
+  border: 5px solid #d9dbdc;
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 50px;
+  height: 600px;
+  width: 318px;
+  position: relative;
+  margin: 30px auto;
+}
+.iphone-top {
+  position: relative;
+}
+.speaker {
+  display: block;
+  width: 70px;
+  height: 6px;
+  margin: 0 auto;
+  border-radius: 7px;
+  background: #292728;
+  top: -38px;
+  position: relative;
+}
+.iphone-screen {
+  background: #eee;
+  border: 1px solid #fff;
+  height: 470px;
+  margin: 0 auto;
+  border: 2px solid rgba(0, 0, 0, 0.9);
+  border-radius: 3px;
+  overflow: auto;
+}

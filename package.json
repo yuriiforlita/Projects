@@ -5,9 +5,11 @@
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-id-generator": "^0.1.6",
     "react-scripts": "2.1.1"
   },
   "scripts": {
+    "lint": "eslint ./",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -25,8 +27,16 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@storybook/react": "^4.0.6",
     "@storybook/addon-actions": "^4.0.6",
-    "@storybook/addon-links": "^4.0.6"
+    "@storybook/addon-links": "^4.0.6",
+    "@storybook/react": "^4.0.6",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.15.2"
   }
 }
