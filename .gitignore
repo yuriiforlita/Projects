@@ -4,8 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-/.cache
 /.storybook
+/.cache
+
 # testing
 /coverage
 
