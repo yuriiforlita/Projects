@@ -76,7 +76,7 @@ td {
   font-size: inherit;
   min-height: 30px;
 }
-.search_butt {
+.search_button {
   background: transparent;
   border: 1px solid white;
   padding: 8px;
@@ -99,7 +99,7 @@ td {
 }
 .imgLoading {
   height: 50%;
-width: 25%;
+  width: 25%;
   top: 25%;
   animation: loading-spin infinite 5s linear;
 }
