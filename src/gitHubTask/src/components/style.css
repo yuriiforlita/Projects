@@ -1,0 +1,129 @@
+/* Specification */
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+h3 {
+  margin: 0;
+  margin-top: 3px;
+}
+td {
+  border: 1px solid black;
+}
+.user {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.user_logo {
+  border-radius: 21%;
+  height: 300px;
+  width: 300px;
+  border: 2px dotted black;
+}
+.user_wrapper {
+  display: flex;
+}
+
+.repos_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+.repos_item {
+  width: 46%;
+  border-radius: 4%;
+  border: 1px dotted black;
+  margin-left: 10px;
+  padding-left: 10px;
+  margin-top: 5px;
+}
+.repos_lang {
+  color: red;
+  margin-bottom: 3px;
+}
+.repos_list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.repos_pull {
+  padding: 2px;
+  color: black;
+  font-size: 16px;
+}
+.repos_pullInfo {
+  display: flex;
+  flex-direction: column;
+}
+.search_wrapper {
+  background-color: #24292e;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search_field {
+  background: hsla(0, 0%, 100%, 0.125);
+  border: 0;
+  box-shadow: none;
+  color: #fff;
+  font-size: inherit;
+  min-height: 30px;
+}
+.search_butt {
+  background: transparent;
+  border: 1px solid white;
+  padding: 8px;
+  margin-left: 10px;
+  color: white;
+}
+
+.imgLoading,
+.imgLoading-mask {
+  position: fixed;
+  top: 14%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.imgLoading-mask {
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  height: 100%;
+}
+.imgLoading {
+  height: 50%;
+width: 25%;
+  top: 25%;
+  animation: loading-spin infinite 5s linear;
+}
+@keyframes loading-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.reposStatus_open {
+  border-radius: 27%;
+  color: white;
+  text-align: center;
+  width: 34%;
+  height: 37px;
+  background: green;
+}
+.reposStatus_closed {
+  border-radius: 27%;
+  color: white;
+  text-align: center;
+  width: 34%;
+  height: 37px;
+  background: red;
+}
