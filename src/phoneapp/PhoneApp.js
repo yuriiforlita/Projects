@@ -3,9 +3,9 @@ import idGenerator from "react-id-generator";
 import Add from "./Components/Add";
 import List from "./Components/List";
 import Search from "./Components/Search";
-import "./App.css";
+import "./PhoneApp.css";
 
-class App extends Component {
+class PhoneApp extends Component {
   state = {
     text: "",
     value: [],
@@ -80,4 +80,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default PhoneApp;

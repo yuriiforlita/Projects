@@ -4,7 +4,7 @@ import Choose from "./Components/Choose.js";
 import MChanging from "./Components/MChanging.js";
 import Json from "./imgJson.json";
 
-class secApp extends Component {
+class IconMoving extends Component {
   state = {
     arrImg: [],
     active: +"",
@@ -93,4 +93,4 @@ class secApp extends Component {
   }
 }
 
-export default secApp;
+export default IconMoving;
