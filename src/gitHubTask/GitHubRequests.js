@@ -1,11 +1,10 @@
 import React from "react";
-import "./App.css";
 import GetInfo from "./components/GetInfo";
 
-const App = () => (
+const GitHubRequests = () => (
   <div className="App">
     <GetInfo />
   </div>
 );
 
-export default App;
+export default GitHubRequests;
