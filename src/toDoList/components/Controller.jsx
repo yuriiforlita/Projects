@@ -12,7 +12,7 @@ export default class Controller extends Component {
         name: "igor",
         id: 0,
         doneTasks: 0,
-        tasks: [{ id: 0, task: "Do It", crossed: false, index: 0 }]
+        tasks: [{ id: 0, task: "Do It", crossed: false }]
       }
     ],
     activeUserId: 0,
@@ -25,14 +25,16 @@ export default class Controller extends Component {
   };
   handleSubmitName = event => {
     event.preventDefault();
-    const name = {
-      id: idGenerator(),
-      name: this.state.name,
-      tasks: [],
-      isWinner: false,
-      doneTasks: 0
-    };
-    this.setState({ users: [...this.state.users, name], name: "" });
+    if (this.state.name === "") {
+    } else {
+      const name = {
+        id: idGenerator(),
+        name: this.state.name,
+        tasks: [],
+        doneTasks: 0
+      };
+      this.setState({ users: [...this.state.users, name], name: "" });
+    }
   };
   activeTabAndUserNow = id => {
     this.setState({ activeUserId: id });
@@ -42,14 +44,15 @@ export default class Controller extends Component {
   };
 
   handleSubmitTask = () => {
-    let task = {
-      task: this.state.task,
-      id: idGenerator(),
-      crossed: false
-    };
-    this.setState(state => {
-      const users = state.users.map(user => {
-        if (state.activeUserId === user.id) {
+    if (this.state.task === "") {
+    } else {
+      let task = {
+        task: this.state.task,
+        id: idGenerator(),
+        crossed: false
+      };
+      const users = this.state.users.map(user => {
+        if (this.state.activeUserId === user.id) {
           return {
             ...user,
             tasks: [...user.tasks, task]
@@ -57,45 +60,49 @@ export default class Controller extends Component {
         }
         return user;
       });
-      return { users };
-    });
-    this.setState({ task: "" });
+      this.setState({ users, task: "" });
+    }
   };
   doneTask = indexOfTask => {
+    const users = this.state.users.map(user => {
+      user.tasks = user.tasks.map(task => {
+        if (task.id === indexOfTask) {
+          const currentCrossed = !task.crossed;
+          user.doneTasks = currentCrossed
+            ? user.doneTasks + 1
+            : user.doneTasks - 1;
+          return {
+            ...task,
+            crossed: currentCrossed
+          };
+        } else {
+          return task;
+        }
+      });
+      return user;
+    });
+    users.forEach(user => {
+      user.tasks.forEach(task => {
+        if (task.crossed) {
+          this.setState({ doneTasks: task.doneTasks++ });
+        } else if (!task.crossed) {
+          this.setState({ doneTasks: task.doneTasks-- });
+        }
+      });
+    });
     this.setState({
-      users: this.state.users.map(user => {
-        user.tasks = user.tasks.map(task => {
-          if (task.id === indexOfTask) {
-            return {
-              ...task,
-              crossed: !task.crossed
-            };
-          } else {
-            return task;
-          }
-        });
-        return user;
-      })
+      users
     });
   };
   getSortTasks = users => {
-    const userAppdate = users
-      .map(user => {
-        const newUser = { id: user.id, name: user.name, doneTasks: 0 };
-        user.tasks.forEach(task => {
-          if (task.crossed) {
-            newUser.doneTasks++;
-          }
-        });
-        return newUser;
-      })
-      .filter(user => user.doneTasks);
-    if (userAppdate.length === 1) {
-      return userAppdate;
-    } else if (userAppdate.length > 1) {
-      const sortUsers = userAppdate.sort((a, b) => b.doneTasks - a.doneTasks);
+    const newUsers = [];
+    users.forEach(user => newUsers.push(user));
+    console.log(newUsers);
+    if (newUsers.length > 1) {
+      const sortUsers = newUsers.sort((a, b) => b.doneTasks - a.doneTasks);
       return sortUsers;
     }
+    return newUsers;
   };
   getUsersTask = id => {
     const currentUser = this.state.users.filter(user => user.id === id);
@@ -124,6 +131,7 @@ export default class Controller extends Component {
   };
 
   render() {
+    console.log(this.state.users);
     const currentUserTasks = this.getUsersTask(this.state.activeUserId);
     const allTasksLength = this.allTasksLength(currentUserTasks);
     const doneTasksLength = this.doneTasksLength(currentUserTasks);

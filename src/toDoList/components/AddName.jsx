@@ -1,7 +1,6 @@
 import React from "react";
 
 const AddName = ({ handleNameChange, handleSubmitName, nameValue }) => {
-  console.log(nameValue);
   return (
     <div className="input-group mb-3 container w-50">
       <input
