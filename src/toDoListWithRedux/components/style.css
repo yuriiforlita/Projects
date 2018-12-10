@@ -1,0 +1,136 @@
+/* Specifications */
+
+
+.crossed {
+  text-decoration: line-through;
+}
+.wrapper {
+  width: 500px;
+  min-height: 200px;
+  margin: 0 auto;
+  border-radius: 22px;
+  background: #fff;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  letter-spacing: -1px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  -webkit-backface-visibility: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-top: 35px;
+}
+
+.ToDoWrapper {
+  background: #d2e3ed;
+}
+
+.mb-3,
+.my-3 {
+  padding-bottom: 2rem !important;
+  margin: 0 !important;
+  padding-top: 30px;
+}
+p {
+  margin: 0;
+}
+
+.addNameWrapper {
+  height: 220px;
+  width: auto;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  background: linear-gradient(
+      135deg,
+      rgba(158, 15, 184, 0.7) -10%,
+      rgba(5, 232, 255, 0.8) 180%
+    ),
+    url(https://static.vecteezy.com/system/resources/previews/000/101/253/non_2x/vector-free-abstract-background-1.jpg);
+  background-size: cover;
+}
+.secondWrapper {
+  background: transparent;
+}
+.nav-tabs {
+  border-bottom: 1px solid #ff0000;
+  padding-top: 11px;
+}
+.nav-tabs .nav-link.active {
+  color: #495057;
+  background-color: #fff;
+  border-color: #ff0000 #ff0000 #fff;
+}
+.activeTasks {
+  color: white;
+  width: 50%;
+  font-size: 25px;
+  float: left;
+  text-shadow: 1px 1px white;
+  margin-bottom:10px;
+}
+.doneTasks {
+  color: white;
+  width: 50%;
+  font-size: 25px;
+  float: right;
+  text-shadow: 1px 1px white;
+  margin-bottom:10px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #f4a20b;
+  border-radius: 2.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.tab-content > .active {
+  display: block;
+  border-bottom: 1px solid red;
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+}
+.tab-pane {
+  padding: 10px 10px 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cursosChange {
+  cursor: not-allowed !important;
+  background: red;
+  color: white !important;
+}
+.cursosChange:hover::after {
+  content: attr(data-title);
+}
+.timeLeft {
+  padding: 10px 0 10px 0;
+}
+.taskRight {
+  padding: 10px 0 10px 0;
+  position: relative;
+}
+.replaceButton {
+  position: absolute;
+  left: 203px;
+  cursor: pointer;
+  top: 13px;
+}
+.taskWrap {
+  width: 100%;
+  word-wrap: break-word;
+}
+.nav-tabs {
+    border-bottom: 1px solid #dee2e6;
+    width: 100%;
+}
+.text-success,.text-danger{
+padding-bottom:10px
+}
