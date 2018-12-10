@@ -1,5 +1,0 @@
-{
-  "extends": ["airbnb", "plugin:prettier/recommended"],
-  "parser": "babel-eslint",
-  "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
-}
